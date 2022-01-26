@@ -29,7 +29,7 @@
 
 ## What is this
 
-Holds all the exercises I did on [Exercism.io](https://exercism.io).
+Holds all the exercises I do on [exercism](https://exercism.org).
 
 Hit the ⭐ button if you found this useful.
 
