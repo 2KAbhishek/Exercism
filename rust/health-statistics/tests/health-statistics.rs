@@ -11,7 +11,6 @@ fn test_name() {
 }
 
 #[test]
-#[ignore]
 fn test_age() {
     let user = User::new(NAME.into(), AGE, WEIGHT);
     assert_eq!(user.age(), AGE);
