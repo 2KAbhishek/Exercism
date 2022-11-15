@@ -13,7 +13,7 @@ impl Player {
         if self.health == 0 {
             return Some(Player {
                 health: 100,
-                mana: if self.level >= 10 { Some(100) } else { None },
+                mana: self.mana.and(Some(100)),
                 level: self.level,
             });
         }
