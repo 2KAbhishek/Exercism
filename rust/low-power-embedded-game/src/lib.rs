@@ -3,7 +3,7 @@
 #![allow(unused)]
 
 pub fn divmod(dividend: i16, divisor: i16) -> (i16, i16) {
-    unimplemented!("implement `fn divmod`");
+    (dividend / divisor, dividend % divisor)
 }
 
 pub fn evens<T>(iter: impl Iterator<Item = T>) -> impl Iterator<Item = T> {
