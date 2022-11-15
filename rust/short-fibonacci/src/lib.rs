@@ -25,6 +25,5 @@ pub fn make_fibonacci(count: usize) -> Vec<u8> {
         let next = fibb[fibb.len() - 1] + fibb[fibb.len() - 2];
         fibb.push(next);
     }
-    print!("{:?}", fibb);
     fibb
 }

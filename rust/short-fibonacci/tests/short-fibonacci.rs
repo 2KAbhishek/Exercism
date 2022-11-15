@@ -22,3 +22,14 @@ fn test_fibonacci() {
         assert_eq!(window[0] + window[1], window[2]);
     }
 }
+
+#[test]
+fn test_make_fibbonacci() {
+    let fibb = make_fibonacci(10);
+    assert_eq!(fibb.len(), 12);
+    assert_eq!(fibb[0], 1);
+    assert_eq!(fibb[1], 1);
+    for window in fibb.windows(3) {
+        assert_eq!(window[0] + window[1], window[2]);
+    }
+}
