@@ -10,11 +10,15 @@ pub struct User {
 
 impl User {
     pub fn new(name: String, age: u32, weight: f32) -> Self {
-        unimplemented!()
+        User {
+            name: name,
+            age: age,
+            weight: weight,
+        }
     }
 
     pub fn name(&self) -> &str {
-        unimplemented!()
+        &self.name
     }
 
     pub fn age(&self) -> u32 {
