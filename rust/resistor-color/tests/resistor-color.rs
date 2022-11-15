@@ -26,13 +26,11 @@ fn test_6() {
 }
 
 #[test]
-#[ignore]
 fn test_8() {
     assert_eq!(value_to_color_string(8), String::from("Grey"));
 }
 
 #[test]
-#[ignore]
 fn test_11_out_of_range() {
     assert_eq!(
         value_to_color_string(11),
@@ -41,7 +39,6 @@ fn test_11_out_of_range() {
 }
 
 #[test]
-#[ignore]
 fn test_all_colors() {
     use ResistorColor::*;
     assert_eq!(

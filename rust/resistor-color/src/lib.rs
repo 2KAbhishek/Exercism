@@ -1,3 +1,4 @@
+use enum_iterator::{all, Sequence};
 use int_enum::IntEnum;
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, IntEnum, Sequence)]
@@ -27,5 +28,5 @@ pub fn value_to_color_string(value: u32) -> String {
 }
 
 pub fn colors() -> Vec<ResistorColor> {
-    unimplemented!("return a list of all the colors ordered by resistance")
+    all::<ResistorColor>().collect::<Vec<_>>()
 }
