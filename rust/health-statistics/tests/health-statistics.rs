@@ -17,7 +17,6 @@ fn test_age() {
 }
 
 #[test]
-#[ignore]
 fn test_weight() {
     let user = User::new(NAME.into(), AGE, WEIGHT);
     assert!((user.weight() - WEIGHT).abs() < f32::EPSILON);
