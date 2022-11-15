@@ -16,13 +16,11 @@ fn test_white() {
 }
 
 #[test]
-#[ignore]
 fn test_2() {
     assert_eq!(value_to_color_string(2), String::from("Red"));
 }
 
 #[test]
-#[ignore]
 fn test_6() {
     assert_eq!(value_to_color_string(6), String::from("Blue"));
 }

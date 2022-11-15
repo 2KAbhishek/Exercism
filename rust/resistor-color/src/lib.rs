@@ -1,4 +1,7 @@
-#[derive(Debug, PartialEq, Eq)]
+use int_enum::IntEnum;
+
+#[derive(Clone, Copy, Debug, Eq, PartialEq, IntEnum, Sequence)]
+#[repr(u32)]
 pub enum ResistorColor {
     Black = 0,
     Brown = 1,
@@ -17,10 +20,10 @@ pub fn color_to_value(_color: ResistorColor) -> u32 {
 }
 
 pub fn value_to_color_string(value: u32) -> String {
-    unimplemented!(
-        "convert the value {} into a string representation of color",
-        value
-    )
+    match ResistorColor::from_int(value) {
+        Ok(resistor) => format!("{:?}", resistor),
+        Err(_) => String::from("value out of range"),
+    }
 }
 
 pub fn colors() -> Vec<ResistorColor> {
