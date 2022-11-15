@@ -23,7 +23,6 @@ fn test_weight() {
 }
 
 #[test]
-#[ignore]
 fn test_set_age() {
     let new_age: u32 = 90;
     let mut user = User::new(NAME.into(), AGE, WEIGHT);
