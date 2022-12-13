@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "pvcarrera"
+  ],
+  "files": {
+    "solution": [
+      "log_line_parser.rb"
+    ],
+    "test": [
+      "log_line_parser_test.rb"
+    ],
+    "exemplar": [
+      ".meta/exemplar.rb"
+    ]
+  },
+  "icon": "logs-logs-logs",
+  "blurb": "Learn about strings by processing logs."
+}
