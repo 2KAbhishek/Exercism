@@ -10,4 +10,5 @@ export function twoFer(): string {
   // ^
   // allows the tests to import this function and call it
   // <-- Your code goes here. You may remove all the commentary in this file.
+    return "One for you, one for me.";
 }
