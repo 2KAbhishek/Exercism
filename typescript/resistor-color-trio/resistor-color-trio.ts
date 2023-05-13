@@ -4,12 +4,17 @@ const UNITS = ["", "kilo", "mega", "giga", "tera", "peta", "exa", "zetta", "yott
 export function decodedResistorValue(colors: string[]): string {
     let value = getValues(colors);
     const unit = getUnit(value);
-    value /= Math.pow(10, Math.floor(Math.log10(value) / 3) * 3);
-    return `${value || 0} ${unit || ""}ohms`;
+    value = adjustValue(value);
+    return `${value}${unit}`;
 }
 
 function getUnit(value: number): string {
-    return UNITS[Math.floor(Math.log10(value) / 3)];
+    return ` ${UNITS[Math.floor(Math.log10(value) / 3)] || ""}ohms`;
+}
+
+function adjustValue(value: number): number {
+    value /= Math.pow(10, Math.floor(Math.log10(value) / 3) * 3);
+    return (value || 0);
 }
 
 function getValues(colors: string[]): number {
