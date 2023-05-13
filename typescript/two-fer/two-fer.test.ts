@@ -6,7 +6,7 @@ describe('TwoFer', () => {
     expect(twoFer()).toEqual(expected)
   })
 
-  xit('a name given', () => {
+  it('a name given', () => {
     const expected = 'One for Alice, one for me.'
     expect(twoFer('Alice')).toEqual(expected)
   })
