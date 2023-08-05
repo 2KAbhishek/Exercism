@@ -8,7 +8,7 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## True and False
 
-True and false logical states are represented with `true` and `false` in Ruby. 
+True and false logical states are represented with `true` and `false` in Ruby.
 
 ```ruby
 happy = true
@@ -30,7 +30,7 @@ You can also use boolean logic with the normal operators:
 
 Here are some examples:
 ```ruby
-# Is "true equal to false"? 
+# Is "true equal to false"?
 true == false # false
 
 # Is "true not equal to false"
