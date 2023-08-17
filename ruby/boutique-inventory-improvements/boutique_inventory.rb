@@ -1,23 +1,18 @@
+# frozen_string_literal: true
+
 class BoutiqueInventory
+  require 'ostruct'
   attr_reader :items
 
   def initialize(items)
-    @items = items
-
-    raise "Refactor this code so that items is an array of openstructs"
+    @items = items.map { |item| OpenStruct.new(item) }
   end
 
   def item_names
-    items.map { |item| item[:name] }.sort
-
-    raise "Refactor the code in item_names"
+    items.map(&:name).sort
   end
 
   def total_stock
-    items.sum do |item|
-      item[:quantity_by_size].values.sum
-    end
-
-    raise "Refactor the code in total_stock"
+    items.map(&:quantity_by_size).map(&:values).flatten.sum
   end
 end
