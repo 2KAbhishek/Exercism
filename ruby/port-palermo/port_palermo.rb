@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Port
-  self::Identifier = :PALE
+  Identifier = :PALE
 
   def self.get_identifier(city)
     city.slice(0, 4).upcase.to_sym
