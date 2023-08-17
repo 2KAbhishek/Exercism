@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
+require 'ostruct'
 class BoutiqueInventory
-  require 'ostruct'
   attr_reader :items
 
   def initialize(items)
