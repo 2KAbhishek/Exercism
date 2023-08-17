@@ -1,11 +1,15 @@
+# frozen_string_literal: true
+
 module Port
-  # TODO: define the 'Identifier' constant
+  self::Identifier = :PALE
 
   def self.get_identifier(city)
-    raise 'Please implement the Port.get_identifier method'
+    city.slice(0, 4).upcase.to_sym
   end
 
   def self.get_terminal(ship_identifier)
-    raise 'Please implement the Port.get_terminal method'
+    return :A if ship_identifier.to_s.start_with?('OIL', 'GAS')
+
+    :B
   end
 end
