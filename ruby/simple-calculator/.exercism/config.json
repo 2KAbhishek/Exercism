@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "pvcarrera"
+  ],
+  "files": {
+    "solution": [
+      "simple_calculator.rb"
+    ],
+    "test": [
+      "simple_calculator_test.rb"
+    ],
+    "exemplar": [
+      ".meta/exemplar.rb"
+    ]
+  },
+  "forked_from": [
+    "csharp/calculator-conundrum"
+  ],
+  "blurb": "Learn about exceptions and error handling by building a simple calculator."
+}
