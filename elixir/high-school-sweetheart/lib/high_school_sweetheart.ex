@@ -16,13 +16,16 @@ defmodule HighSchoolSweetheart do
   end
 
   def pair(full_name1, full_name2) do
+    i1 = initials(full_name1)
+    i2 = initials(full_name2)
+
     """
          ******       ******
        **      **   **      **
      **         ** **         **
     **            *            **
     **                         **
-    **     #{initials(full_name1)}  +  #{initials(full_name2)}     **
+    **     #{i1}  +  #{i2}     **
      **                       **
        **                   **
          **               **
