@@ -1,7 +1,5 @@
 defmodule KitchenCalculator do
-  def get_volume(volume_pair) do
-    elem(volume_pair, 1)
-  end
+  def get_volume({_, volume}), do: volume
 
   def to_milliliter({:milliliter, value}), do: {:milliliter, value}
   def to_milliliter({:cup, value}), do: {:milliliter, value * 240}
