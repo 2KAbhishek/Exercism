@@ -18,12 +18,10 @@ defmodule RPG.CharacterSheet do
 
   def run() do
     welcome()
-    character = %{}
+     %{}
       |> Map.put(:name, ask_name())
       |> Map.put(:class, ask_class())
       |> Map.put(:level, ask_level())
-
-    IO.puts("Your character: #{inspect(character, label: "Character")}")
-    character
+      |> IO.inspect( label: "Your character")
   end
 end
