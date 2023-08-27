@@ -1,10 +1,18 @@
 defmodule Username do
-  def sanitize(username) do
-    # ä becomes ae
-    # ö becomes oe
-    # ü becomes ue
-    # ß becomes ss
+  def sanitize(~c""), do: ~c""
 
-    # Please implement the sanitize/1 function
+  def sanitize([head | tail]) do
+    sanitized =
+      case head do
+        ?ä -> ~c"ae"
+        ?ö -> ~c"oe"
+        ?ü -> ~c"ue"
+        ?ß -> ~c"ss"
+        char when char in ?a..?z -> [char]
+        ?_ -> ~c"_"
+        _ -> ~c""
+      end
+
+    sanitized ++ sanitize(tail)
   end
 end
