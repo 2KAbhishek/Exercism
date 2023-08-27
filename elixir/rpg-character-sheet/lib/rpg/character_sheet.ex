@@ -23,7 +23,7 @@ defmodule RPG.CharacterSheet do
       |> Map.put(:class, ask_class())
       |> Map.put(:level, ask_level())
 
-    IO.puts("Your character: #{inspect(character)}")
+    IO.puts("Your character: #{inspect(character, label: "Character")}")
     character
   end
 end
