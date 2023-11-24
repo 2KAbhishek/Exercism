@@ -1,6 +1,6 @@
 defmodule LogParser do
   def valid_line?(line) do
-    line =~ ~r/\[DEBUG\]|\[INFO\]|\[WARN\]|\[ERROR\]/
+    line =~ ~r/^\[DEBUG\]|\[INFO\]|\[WARNING\]|\[ERROR\]/
   end
 
   def split_line(line) do
@@ -12,7 +12,6 @@ defmodule LogParser do
   end
 
   def tag_with_user_name(line) do
-    # Please implement the tag_with_user_name/1 function
     match = Regex.run(~r/User\s+(\S+)/, line)
 
     if match do
