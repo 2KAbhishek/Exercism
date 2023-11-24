@@ -1,6 +1,6 @@
 defmodule PaintByNumber do
   def palette_bit_size(color_count) do
-    # Please implement the palette_bit_size/1 function
+    color_count |> :math.log2() |> round()
   end
 
   def empty_picture() do
