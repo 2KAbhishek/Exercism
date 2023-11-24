@@ -13,5 +13,12 @@ defmodule LogParser do
 
   def tag_with_user_name(line) do
     # Please implement the tag_with_user_name/1 function
+    match = Regex.run(~r/User\s+(\S+)/, line)
+
+    if match do
+      "[USER] #{Enum.at(match, 1)} " <> line
+    else
+      line
+    end
   end
 end
