@@ -15,8 +15,11 @@ defmodule DNA do
     Enum.find(@map, fn {_, value} -> value == encoded_code end) |> elem(0)
   end
 
-  def encode(dna) do
-    # Please implement the encode/1 function
+  def encode(dna), do: do_encode(dna, <<>>)
+  defp do_encode([], acc), do: acc
+
+  defp do_encode([head | tail], acc) do
+    do_encode(tail, <<acc::bitstring, encode_nucleotide(head)::size(4)>>)
   end
 
   def decode(dna) do
