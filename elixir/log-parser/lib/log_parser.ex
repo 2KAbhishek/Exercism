@@ -4,7 +4,7 @@ defmodule LogParser do
   end
 
   def split_line(line) do
-    # Please implement the split_line/1 function
+    String.split(line, ~r/\<[~\*=-]*\>/)
   end
 
   def remove_artifacts(line) do
