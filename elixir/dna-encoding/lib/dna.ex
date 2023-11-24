@@ -22,7 +22,10 @@ defmodule DNA do
     do_encode(tail, <<acc::bitstring, encode_nucleotide(head)::size(4)>>)
   end
 
-  def decode(dna) do
-    # Please implement the decode/1 function
+  def decode(dna), do: do_decode(dna, ~c"")
+  defp do_decode(<<>>, acc), do: acc
+
+  defp do_decode(<<head::size(4), tail::bitstring>>, acc) do
+    do_decode(tail, acc ++ [decode_nucleotide(head)])
   end
 end
