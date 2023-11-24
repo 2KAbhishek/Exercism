@@ -8,7 +8,7 @@ defmodule LogParser do
   end
 
   def remove_artifacts(line) do
-    # Please implement the remove_artifacts/1 function
+    String.replace(line, ~r/end-of-line(\d+)/i, "")
   end
 
   def tag_with_user_name(line) do
