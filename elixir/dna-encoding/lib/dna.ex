@@ -1,18 +1,26 @@
 defmodule DNA do
-  @dna_map %{
-    ?A => 0b0001,
-    ?C => 0b0010,
-    ?G => 0b0100,
-    ?T => 0b1000,
-    ?\s => 0b0000
-  }
-
   def encode_nucleotide(code_point) do
-    @dna_map[code_point]
+    dna_binary = %{
+      ?A => 0b0001,
+      ?C => 0b0010,
+      ?G => 0b0100,
+      ?T => 0b1000,
+      ?\s => 0b0000
+    }
+
+    dna_binary[code_point]
   end
 
   def decode_nucleotide(encoded_code) do
-    Enum.find(@dna_map, fn {_, value} -> value == encoded_code end) |> elem(0)
+    binary_dna = %{
+      0b0001 => ?A,
+      0b0010 => ?C,
+      0b0100 => ?G,
+      0b1000 => ?T,
+      0b0000 => ?\s
+    }
+
+    binary_dna[encoded_code]
   end
 
   def encode(dna), do: do_encode(dna, <<>>)
