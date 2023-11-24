@@ -12,11 +12,16 @@ defmodule PaintByNumber do
   end
 
   def prepend_pixel(picture, color_count, pixel_color_index) do
-    <<pixel_color_index::size(palette_bit_size(color_count)), picture::bitstring>>
+    bit_size = palette_bit_size(color_count)
+    <<pixel_color_index::size(bit_size), picture::bitstring>>
   end
 
+  def get_first_pixel(<<>>, _), do: nil
+
   def get_first_pixel(picture, color_count) do
-    # Please implement the get_first_pixel/2 function
+    bit_size = palette_bit_size(color_count)
+    <<pixel::size(bit_size), _::bitstring>> = picture
+    pixel
   end
 
   def drop_first_pixel(picture, color_count) do
