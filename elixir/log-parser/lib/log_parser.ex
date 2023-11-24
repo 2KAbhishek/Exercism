@@ -1,6 +1,6 @@
 defmodule LogParser do
   def valid_line?(line) do
-    # Please implement the valid_line?/1 function
+    line =~ ~r/\[DEBUG\]|\[INFO\]|\[WARN\]|\[ERROR\]/
   end
 
   def split_line(line) do
