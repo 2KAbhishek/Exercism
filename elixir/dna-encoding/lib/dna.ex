@@ -1,17 +1,18 @@
 defmodule DNA do
+  @map %{
+    ?A => 0b0001,
+    ?C => 0b0010,
+    ?G => 0b0100,
+    ?T => 0b1000,
+    " " => 0b0000
+  }
+
   def encode_nucleotide(code_point) do
-    case code_point do
-      ~c" " -> 0b0000
-      ?A -> 0b0001
-      ?C -> 0b0010
-      ?G -> 0b0100
-      ?T -> 0b1000
-      _ -> nil
-    end
+    @map[code_point]
   end
 
   def decode_nucleotide(encoded_code) do
-    # Please implement the decode_nucleotide/1 function
+    Enum.find(@map, fn {_, value} -> value == encoded_code end) |> elem(0)
   end
 
   def encode(dna) do
