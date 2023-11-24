@@ -33,6 +33,6 @@ defmodule PaintByNumber do
   end
 
   def concat_pictures(picture1, picture2) do
-    # Please implement the concat_pictures/2 function
+    <<picture1::bitstring, picture2::bitstring>>
   end
 end
