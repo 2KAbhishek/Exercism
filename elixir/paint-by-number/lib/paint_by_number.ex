@@ -4,7 +4,7 @@ defmodule PaintByNumber do
   end
 
   def empty_picture() do
-    # Please implement the empty_picture/0 function
+    <<>>
   end
 
   def test_picture() do
