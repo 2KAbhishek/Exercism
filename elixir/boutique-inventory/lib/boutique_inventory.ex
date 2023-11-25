@@ -1,6 +1,6 @@
 defmodule BoutiqueInventory do
   def sort_by_price(inventory) do
-    # Please implement the sort_by_price/1 function
+    Enum.sort_by(inventory, fn item -> item.price end)
   end
 
   def with_missing_price(inventory) do
