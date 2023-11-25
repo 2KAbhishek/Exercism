@@ -4,7 +4,7 @@ defmodule Chessboard do
   end
 
   def file_range do
-    # Please implement the file_range/0 function
+    ?A..?H
   end
 
   def ranks do
