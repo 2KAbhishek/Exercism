@@ -1,5 +1,6 @@
 defmodule Chessboard do
   def rank_range do
+    1..8
   end
 
   def file_range do
