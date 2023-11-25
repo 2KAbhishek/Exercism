@@ -4,11 +4,11 @@ defmodule Newsletter do
   end
 
   def open_log(path) do
-    File.open!(path, [:append])
+    File.open!(path, [:write])
   end
 
   def log_sent_email(pid, email) do
-    # Please implement the log_sent_email/2 function
+    IO.puts(pid, email)
   end
 
   def close_log(pid) do
