@@ -12,7 +12,7 @@ defmodule Newsletter do
   end
 
   def close_log(pid) do
-    # Please implement the close_log/1 function
+    File.close(pid)
   end
 
   def send_newsletter(emails_path, log_path, send_fun) do
