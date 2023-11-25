@@ -1,6 +1,6 @@
 defmodule LibraryFees do
   def datetime_from_string(string) do
-    # Please implement the datetime_from_string/1 function
+    NaiveDateTime.from_iso8601!(string)
   end
 
   def before_noon?(datetime) do
