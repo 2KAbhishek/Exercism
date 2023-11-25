@@ -16,7 +16,8 @@ defmodule LibraryFees do
   end
 
   def days_late(planned_return_date, actual_return_datetime) do
-    # Please implement the days_late/2 function
+    diff = Date.diff(NaiveDateTime.to_date(actual_return_datetime), planned_return_date)
+    max(0, diff)
   end
 
   def monday?(datetime) do
