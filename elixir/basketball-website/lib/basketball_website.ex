@@ -10,6 +10,6 @@ defmodule BasketballWebsite do
   end
 
   def get_in_path(data, path) do
-    # Please implement the get_in_path/2 function
+    get_in(data, String.split(path, "."))
   end
 end
