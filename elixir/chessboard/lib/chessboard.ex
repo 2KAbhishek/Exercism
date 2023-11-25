@@ -14,4 +14,5 @@ defmodule Chessboard do
   def files do
     # Please implement the files/0 function
   end
+  def files, do: Enum.map(file_range(), &<<&1>>) |> Enum.to_list()
 end
