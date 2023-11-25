@@ -1,6 +1,6 @@
 defmodule Newsletter do
   def read_emails(path) do
-    # Please implement the read_emails/1 function
+    File.read!(path) |> String.split()
   end
 
   def open_log(path) do
