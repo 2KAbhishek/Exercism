@@ -4,7 +4,7 @@ defmodule LibraryFees do
   end
 
   def before_noon?(datetime) do
-    # Please implement the before_noon?/1 function
+    datetime.hour < 12
   end
 
   def return_date(checkout_datetime) do
