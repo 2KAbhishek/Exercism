@@ -5,7 +5,7 @@ defmodule DancingDots.Animation do
   @type frame_number :: pos_integer
 
   @callback init(opts) :: {:ok, opts} | {:error, error}
-  @callback handle_frame(dot, frame_number, opts) :: {dot}
+  @callback handle_frame(dot, frame_number, opts) :: dot
 
   defmacro __using__(_opts \\ []) do
     quote do
@@ -38,5 +38,10 @@ defmodule DancingDots.Zoom do
 
     {:error,
      "The :velocity option is required, and its value must be a number. Got: #{inspect(velocity)}"}
+  end
+
+  def handle_frame(dot, frame_number, opts) do
+    velocity = Keyword.get(opts, :velocity)
+    %DancingDots.Dot{dot | radius: dot.radius + (frame_number - 1) * velocity}
   end
 end
