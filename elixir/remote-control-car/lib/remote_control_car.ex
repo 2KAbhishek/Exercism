@@ -6,11 +6,11 @@ defmodule RemoteControlCar do
 
   def new(nickname), do: %RemoteControlCar{nickname: nickname}
 
-  def display_distance(remote_car = %RemoteControlCar{}), do: "#{remote_car.distance_driven_in_meters} meters"
+  def display_distance(car = %RemoteControlCar{}), do: "#{car.distance_driven_in_meters} meters"
 
-  def display_battery(remote_car) do
-    # Please implement the display_battery/1 function
-  end
+  def display_battery(_ = %RemoteControlCar{battery_percentage: 0}), do: "Battery empty"
+
+  def display_battery(car = %RemoteControlCar{}), do: "Battery at #{car.battery_percentage}%"
 
   def drive(remote_car) do
     # Please implement the drive/1 function
