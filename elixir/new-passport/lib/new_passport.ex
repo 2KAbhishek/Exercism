@@ -1,6 +1,10 @@
 defmodule NewPassport do
   def get_new_passport(now, birthday, form) do
-    # Please implement the 'get_new_passport/3' function
+    with {:ok, time} <- enter_building(now) do
+      {:ok, time}
+    else
+      {:error, msg} -> {:error, msg}
+    end
   end
 
   # Do not modify the functions below
