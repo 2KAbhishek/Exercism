@@ -12,6 +12,8 @@ defmodule RemoteControlCar do
 
   def display_battery(car = %RemoteControlCar{}), do: "Battery at #{car.battery_percentage}%"
 
+  def drive(car = %RemoteControlCar{battery_percentage: 0}), do: car
+
   def drive(car = %RemoteControlCar{}) do
     %{
       car
