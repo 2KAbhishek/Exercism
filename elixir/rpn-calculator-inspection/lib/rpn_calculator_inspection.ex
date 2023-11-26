@@ -13,31 +13,15 @@ defmodule RPNCalculatorInspection do
   end
 
   def reliability_check(calculator, inputs) do
-    state = Process.flag(:trap_exit, true)
+    flag = Process.flag(:trap_exit, true)
 
-    stream =
+    results =
       inputs
-      |> Task.async_stream(
-        fn input ->
-          state = Process.flag(:trap_exit, true)
+      |> Enum.map(&start_reliability_check(calculator, &1))
+      |> Enum.reduce(%{}, &await_reliability_check_result/2)
 
-          result =
-            start_reliability_check(calculator, input) |> await_reliability_check_result(%{})
-
-          Process.flag(:trap_exit, state)
-          result
-        end,
-        max_concurrency: 100
-      )
-
-    result =
-      stream
-      |> Enum.reduce(%{}, fn {:ok, body}, acc ->
-        Enum.into(acc, body)
-      end)
-
-    Process.flag(:trap_exit, state)
-    result
+    Process.flag(:trap_exit, flag)
+    results
   end
 
   def correctness_check(calculator, inputs) do
