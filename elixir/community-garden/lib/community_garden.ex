@@ -24,7 +24,9 @@ defmodule CommunityGarden do
   end
 
   def release(pid, plot_id) do
-    # Please implement the release/2 function
+    Agent.update(pid, fn {next_plot_id, state} ->
+      {next_plot_id, Enum.filter(state, fn plot -> plot.plot_id != plot_id end)}
+    end)
   end
 
   def get_registration(pid, plot_id) do
