@@ -31,5 +31,12 @@ end
 defmodule DancingDots.Zoom do
   use DancingDots.Animation
 
-  def init([velocity: v] = opts) when is_integer(v), do: {:ok, opts}
+  def init([velocity: v] = opts) when is_number(v), do: {:ok, opts}
+
+  def init(opts) do
+    velocity = Keyword.get(opts, :velocity)
+
+    {:error,
+     "The :velocity option is required, and its value must be a number. Got: #{inspect(velocity)}"}
+  end
 end
