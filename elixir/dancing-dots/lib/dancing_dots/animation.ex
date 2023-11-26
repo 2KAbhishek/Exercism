@@ -15,7 +15,15 @@ defmodule DancingDots.Animation do
 end
 
 defmodule DancingDots.Flicker do
-  # Please implement the module
+  def init(_opts), do: {:ok, []}
+
+  def handle_frame(dot, frame_number, _opts) do
+    if rem(frame_number, 4) == 0 do
+      dot.opacity / 2
+    else
+      dot
+    end
+  end
 end
 
 defmodule DancingDots.Zoom do
