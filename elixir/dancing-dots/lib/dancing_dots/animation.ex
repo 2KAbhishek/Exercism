@@ -7,7 +7,7 @@ defmodule DancingDots.Animation do
   @callback init(opts) :: {:ok, opts} | {:error, error}
   @callback handle_frame(dot, frame_number, opts) :: dot
 
-  defmacro __using__(_opts \\ []) do
+  defmacro __using__(_) do
     quote do
       @behaviour DancingDots.Animation
       def init(opts), do: {:ok, opts}
