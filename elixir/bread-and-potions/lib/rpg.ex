@@ -29,4 +29,10 @@ defmodule RPG do
       {nil, %RPG.Character{character | health: character.health + 5}}
     end
   end
+
+  defimpl Edible, for: ManaPotion do
+    def eat(potion, character) do
+      {%EmptyBottle{}, %RPG.Character{character | mana: character.mana + potion.strength}}
+    end
+  end
 end
