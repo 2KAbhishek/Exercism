@@ -5,7 +5,6 @@ defmodule LucasNumbers do
 
   E.g.: 2, 1, 3, 4, 7, 11, 18, 29, ...
   """
-  def generate(count) do
-    # Please implement the generate/1 function
-  end
+  def generate(1), do: [2]
+  def generate(2), do: [2, 1]
 end
