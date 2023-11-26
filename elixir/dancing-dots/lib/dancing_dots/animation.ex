@@ -4,22 +4,22 @@ defmodule DancingDots.Animation do
   @type error :: any
   @type frame_number :: pos_integer
 
-  @callback init(opts :: opts) :: {:ok, opts :: opts} | {:error, error :: error}
-  @callback handle_frame(dot :: dot, frame_number :: frame_number, opts :: opts) :: {dot :: dot}
+  @callback init(opts) :: {:ok, opts} | {:error, error}
+  @callback handle_frame(dot, frame_number, opts) :: {dot}
 
   defmacro __using__(_opts \\ []) do
     quote do
+      @behaviour DancingDots.Animation
       def init(opts), do: {:ok, opts}
+      defoverridable init: 1
     end
   end
 end
 
 defmodule DancingDots.Flicker do
-  def init(_opts), do: {:ok, []}
-
   def handle_frame(dot, frame_number, _opts) do
     if rem(frame_number, 4) == 0 do
-      dot.opacity / 2
+      %DancingDots.Dot{dot | opacity: dot.opacity / 2}
     else
       dot
     end
@@ -27,5 +27,5 @@ defmodule DancingDots.Flicker do
 end
 
 defmodule DancingDots.Zoom do
-  # Please implement the module
+  def init(opts) when is_integer(opts.velocity), do: {:ok, opts}
 end
