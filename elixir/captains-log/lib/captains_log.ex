@@ -14,6 +14,6 @@ defmodule CaptainsLog do
   end
 
   def format_stardate(stardate) do
-    "#{:io_lib.format("~.1f", [stardate])}"
+    :io_lib.format("~.1f", [stardate]) |> to_string
   end
 end
