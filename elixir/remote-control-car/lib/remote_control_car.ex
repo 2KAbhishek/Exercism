@@ -6,9 +6,7 @@ defmodule RemoteControlCar do
 
   def new(nickname), do: %RemoteControlCar{nickname: nickname}
 
-  def display_distance(remote_car) do
-    # Please implement the display_distance/1 function
-  end
+  def display_distance(remote_car = %RemoteControlCar{}), do: "#{remote_car.distance_driven_in_meters} meters"
 
   def display_battery(remote_car) do
     # Please implement the display_battery/1 function
