@@ -10,7 +10,7 @@ defmodule CaptainsLog do
   end
 
   def random_stardate() do
-    # Please implement the random_stardate/0 function
+    :rand.uniform() * (42000 - 41000) + 41000
   end
 
   def format_stardate(stardate) do
