@@ -4,7 +4,8 @@ defmodule DancingDots.Animation do
   @type error :: any
   @type frame_number :: pos_integer
 
-  # Please implement the module
+  @callback init(opts :: opts) :: {:ok, opts :: opts} | {:error, error :: error}
+  @callback handle_frame(dot :: dot, frame_number :: frame_number, opts :: opts) :: {dot :: dot}
 end
 
 defmodule DancingDots.Flicker do
