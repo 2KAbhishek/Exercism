@@ -2,7 +2,7 @@ defmodule CaptainsLog do
   @planetary_classes ["D", "H", "J", "K", "L", "M", "N", "R", "T", "Y"]
 
   def random_planet_class() do
-    # Please implement the random_planet_class/0 function
+    Enum.random(@planetary_classes)
   end
 
   def random_ship_registry_number() do
