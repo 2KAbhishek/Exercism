@@ -5,4 +5,7 @@ defmodule RPNCalculator.Exception do
   end
 
   # Please implement StackUnderflowError here.
+  defmodule StackUnderflowError do
+    defexception message: "stack underflow occurred"
+  end
 end
