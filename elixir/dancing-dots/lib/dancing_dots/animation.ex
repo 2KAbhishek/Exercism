@@ -17,6 +17,8 @@ defmodule DancingDots.Animation do
 end
 
 defmodule DancingDots.Flicker do
+  use DancingDots.Animation
+
   def handle_frame(dot, frame_number, _opts) do
     if rem(frame_number, 4) == 0 do
       %DancingDots.Dot{dot | opacity: dot.opacity / 2}
@@ -27,5 +29,7 @@ defmodule DancingDots.Flicker do
 end
 
 defmodule DancingDots.Zoom do
-  def init(opts) when is_integer(opts.velocity), do: {:ok, opts}
+  use DancingDots.Animation
+
+  def init([velocity: v] = opts) when is_integer(v), do: {:ok, opts}
 end
