@@ -1,6 +1,6 @@
 defmodule RPNCalculator do
   def calculate!(stack, operation) do
-    # Please implement the calculate!/2 function
+    operation.(stack)
   end
 
   def calculate(stack, operation) do
