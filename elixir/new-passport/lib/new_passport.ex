@@ -1,9 +1,11 @@
 defmodule NewPassport do
   def get_new_passport(now, birthday, form) do
-    with {:ok, time} <- enter_building(now) do
-      {:ok, time}
+    with {:ok, timestamp} <- enter_building(now),
+         {:ok, manual} <- find_counter_information(now) do
+      {:ok, manual.(birthday)}
     else
       {:error, msg} -> {:error, msg}
+      {:coffee_break, _msg} -> {:retry, NaiveDateTime.add(now, 15, :minute)}
     end
   end
 
