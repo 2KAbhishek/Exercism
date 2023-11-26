@@ -10,7 +10,7 @@ defmodule CommunityGarden do
   end
 
   def list_registrations(pid) do
-    # Please implement the list_registrations/1 function
+    Agent.get(pid, fn registrations -> registrations end)
   end
 
   def register(pid, register_to) do
