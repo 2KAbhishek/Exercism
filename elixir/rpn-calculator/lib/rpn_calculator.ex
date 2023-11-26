@@ -12,6 +12,10 @@ defmodule RPNCalculator do
   end
 
   def calculate_verbose(stack, operation) do
-    # Please implement the calculate_verbose/2 function
+    try do
+      {:ok, operation.(stack)}
+    rescue
+      e -> {:error, e.message}
+    end
   end
 end
