@@ -20,4 +20,13 @@ defmodule RPG do
   end
 
   # Add code to define the protocol and its implementations below here...
+  defprotocol Edible do
+    def eat(item, character)
+  end
+
+  defimpl Edible, for: LoafOfBread do
+    def eat(_bread, character) do
+      {nil, %RPG.Character{character | health: character.health + 5}}
+    end
+  end
 end
